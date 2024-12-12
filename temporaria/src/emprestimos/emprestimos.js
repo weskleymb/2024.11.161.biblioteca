@@ -27,7 +27,7 @@ function realizarEmprestimo() {
     }
 
     const livroId = input("| * Digite o ID do livro: ");
-    while (!livros.find(livro => livro.id === livroId)) {
+    while (!livros.find(livro => livro.id === livroId && !livro.emprestado)) {
         console.log("+-----------------------------------+");
         console.log("| Livro não encontrado!             |");
         console.log("+-----------------------------------+\n");
@@ -51,6 +51,26 @@ function realizarEmprestimo() {
     emprestimos.push({ id, usuarioCpf, livroId, dataEmprestimo });
     console.log("+-----------------------------------+");
     console.log("| Empréstimo realizado com sucesso! |");
+    console.log("+-----------------------------------+");
+}
+
+function realizarDevolucao() {
+    console.log("+-----------------------------------+");
+    console.log("| Realizar Devolução                |");
+    console.log("+-----------------------------------+");
+    const id = input("| * Digite o ID do empréstimo: ");
+    const emprestimo = emprestimos.find(emprestimo => emprestimo.id === id);
+    if (!emprestimo) {
+        console.log("+-----------------------------------+");
+        console.log("| Empréstimo não encontrado!        |");
+        console.log("+-----------------------------------+");
+        return;
+    }
+    emprestimo.dataDevolucao = new Date().toLocaleDateString();
+    const livro = livros.find(livro => livro.id === emprestimo.livroId);
+    livro.emprestado = false;
+    console.log("+-----------------------------------+");
+    console.log("| Devolução realizada com sucesso!  |");
     console.log("+-----------------------------------+");
 }
 
