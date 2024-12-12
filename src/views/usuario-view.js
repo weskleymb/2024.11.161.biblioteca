@@ -150,9 +150,9 @@ const usuarioView = () => {
     console.log(utils.createBase(width));
     console.log(utils.formatMessage("Menu Usuários", width));
     console.log(utils.createBase(width));
-    console.log(utils.formatMessage("1 - Cadastrar Usuário", width));
-    console.log(utils.formatMessage("2 - Editar Usuário", width));
-    console.log(utils.formatMessage("3 - Excluir Usuário", width));
+    console.log(utils.formatMessage("1 - Cadastrar usuário", width));
+    console.log(utils.formatMessage("2 - Editar usuário", width));
+    console.log(utils.formatMessage("3 - Excluir usuário", width));
     console.log(utils.formatMessage("4 - Listar todos os usuários", width));
     console.log(utils.formatMessage("5 - Buscar usuário por CPF", width));
     console.log(utils.formatMessage("0 - Retornar ao menu principal", width));
