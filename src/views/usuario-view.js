@@ -161,6 +161,7 @@ const usuarioView = () => {
     switch (opcao) {
         case "0":
             menuPrincipal();
+            break;
         case "1":
             cadastrarUsuario();
             break;
