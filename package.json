@@ -1,13 +1,15 @@
 {
-  "name": "biblioteca",
+  "name": "sistema-biblioteca",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Sistema funcional de gerenciamento de biblioteca utilizando programação funcional em JavaScript.",
+  "main": "./src/index.js",
   "type": "module",
   "scripts": {
     "start": "node ./src/index.js"
   },
+  "keywords": ["biblioteca", "gerenciamento", "programação funcional", "javascript"],
   "author": "Weskley Bezerra",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "prompt-sync": "^4.2.0"
   }
