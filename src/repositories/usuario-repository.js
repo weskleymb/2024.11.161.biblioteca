@@ -27,13 +27,16 @@ const usuarioRepository = {
      * @param {string} usuario.nome - O nome do usuário.
      * @param {string} usuario.fone - O telefone do usuário.
      * @param {string} usuario.email - O email do usuário.
+     * @returns {Object} - O usuário salvo.
      */
     save: (usuario) => {
         const isUserExists = usuarioRepository.findByCpf(usuario.cpf)
         if (isUserExists) {
             Object.assign(isUserExists, usuario);
+            return isUserExists;
         } else {
             database.usuarios.push(usuario);
+            return usuario;
         }
     },
 
