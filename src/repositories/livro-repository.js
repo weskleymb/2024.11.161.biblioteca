@@ -28,10 +28,11 @@ const livroRepository = {
      * @param {boolean} livro.emprestado - Se o livro está emprestado ou não.
      */
     save: (livro) => {
-        const isBookExists = livroRepository.findByIsbn(livro.isbn)
+        const isBookExists = livroRepository.findById(livro.id)
         if (isBookExists) {
             Object.assign(isBookExists, livro);
         } else {
+            livro.id = Date.now().toString();
             database.livros.push(livro);
         }
     },
