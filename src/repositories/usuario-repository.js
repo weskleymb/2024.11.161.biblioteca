@@ -16,9 +16,7 @@ const usuarioRepository = {
      * @param {string} cpf - O CPF do usuário a ser buscado.
      * @returns {Object|undefined} O usuário encontrado ou undefined se não encontrado.
      */
-    findByCpf: (cpf) => {
-        return database.usuarios.find(usuario => usuario.cpf === cpf);
-    },
+    findByCpf: (cpf) => database.usuarios.find(usuario => usuario.cpf === cpf),
 
     /**
      * Salva um novo usuário no banco de dados.
